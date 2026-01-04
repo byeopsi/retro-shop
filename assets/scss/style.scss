@@ -1,4 +1,117 @@
-.test {
-  font-size: 10px;
-  color: black;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#retro-shop-app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  #left-container {
+    flex-basis: 20%;
+    flex-shrink: 1;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    background-color: #fcf2e5;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  #right-container {
+    flex-basis: 80%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+
+    nav {
+      height: 5%;
+      ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        gap: 3em;
+        height: 100%;
+        padding: 1em 0;
+        background-color: #fcf2e5;
+        a {
+          cursor: pointer;
+          li {
+            padding: 2em 3em 1em 3em;
+          }
+        }
+      }
+    }
+
+    main {
+      height: 95%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      flex-direction: column;
+      overflow-y: scroll;
+      .row {
+        width: 100%;
+        max-height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+          padding: 1em;
+          flex-basis: 25%;
+          flex-shrink: 0;
+          flex-grow: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          background-color: #fff;
+          img {
+            max-width: 100%;
+          }
+          h3 {
+            width: 100%;
+          }
+          h4 {
+            width: 100%;
+          }
+          div {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    flex-basis: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2CB05;
+  }
 }
