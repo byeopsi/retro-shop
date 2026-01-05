@@ -1,3 +1,17 @@
+$color: (
+  beige: #fcf2e5,
+  brown: #3E2723,
+  red: #B23A48,
+  yellow: #F2CB05,
+);
+
+@font-face {
+    font-family: 'Taenada';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +22,8 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: map-get($color, brown);
+  font-family: 'Taenada';
 }
 
 body {
@@ -22,6 +38,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  overflow-x: hidden;
 
   #left-container {
     flex-basis: 20%;
@@ -29,10 +46,16 @@ body {
     height: 95%;
     display: flex;
     align-items: center;
-    background-color: #fcf2e5;
-
+    background-color: map-get($color, beige);
+    justify-content: center;
+    flex-direction: column;
     img {
       max-width: 100%;
+    }
+    div {
+      border: 2px solid map-get($color, brown);
+      padding: 5.25em;
+      border-radius: 3%;
     }
   }
 
@@ -54,11 +77,15 @@ body {
         gap: 3em;
         height: 100%;
         padding: 1em 0;
-        background-color: #fcf2e5;
+        background-color: map-get($color, beige);
         a {
           cursor: pointer;
           li {
             padding: 2em 3em 1em 3em;
+          }
+          &:nth-child(2) {
+            color: map-get($color, red);
+            font-weight: 700;
           }
         }
       }
@@ -69,9 +96,11 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #fff;
+      background-color: map-get($color, beige);
       flex-direction: column;
       overflow-y: scroll;
+      padding: 3em;
+      justify-content: flex-start;
       .row {
         width: 100%;
         max-height: 90%;
@@ -86,15 +115,17 @@ body {
           flex-direction: column;
           align-items: flex-start;
           justify-content: center;
-          background-color: #fff;
+          background-color: map-get($color, beige);
           img {
             max-width: 100%;
+            margin-bottom: .5em;
           }
           h3 {
             width: 100%;
           }
           h4 {
             width: 100%;
+            margin-bottom: .5em;
           }
           div {
             display: flex;
@@ -106,12 +137,70 @@ body {
     }
   }
 
+  #login-btn {
+    width: 5em;
+    height: 5em;
+    background-color: map-get($color, yellow);
+    position: absolute;
+    right: 30px;
+    bottom: 80px;
+    border-radius: 50%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: .3em;
+    cursor: pointer;
+  }
+
   footer {
     flex-basis: 100%;
     height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F2CB05;
+    background-color: map-get($color, yellow);
+  }
+}
+
+#login-popup {
+  background-color: rgba(map-get($color, brown), 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .25s ease;
+
+  #login-container {
+    width: 20%;
+    height: 20%;
+    background-color: map-get($color, beige);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    input {
+      width: 80%;
+      height: 20%;
+      padding-left: .5em;
+      border: none;
+      &:nth-child(2){
+        margin-bottom: .5em;
+        border-top: 3px solid map-get($color, beige);
+      }
+    }
+
+    button {
+      width: 80%;
+      border: none;
+      background-color: map-get($color, yellow);
+      padding: .5em 0;
+      cursor: pointer;
+    }
   }
 }
