@@ -10,15 +10,16 @@
     <div id="retro-shop-app">
         <section id="left-container">
             <img src="./assets/img/main-logo.png" />
+            <div>Please Sign In</div>
         </section>
         <section id="right-container">
             <nav>
                 <ul>
-                    <a><li>home</li></a>
-                    <a><li>new</li></a>
-                    <a><li>clothes</li></a>
-                    <a><li>socks</li></a>
-                    <a><li>shoes</li></a>
+                    <a><li class="menu">HOME</li></a>
+                    <a><li class="menu">NEW</li></a>
+                    <a><li class="menu">CLOTH</li></a>
+                    <a><li class="menu">SOCKS</li></a>
+                    <a><li class="menu">SHOES</li></a>
                 </ul>
             </nav>
             <main>
@@ -138,7 +139,32 @@
               </div>
             </main>
         </section>
+        <div id="login-btn" onclick="toggleLoginPopup()">
+          <span>LOGIN</span>
+        </div>
         <footer>2026 @beyopsi</footer>
+        <div id="login-popup">
+          <div id="login-container">
+            <input type="text" placeholder="아이디"/>
+            <input type="password" placeholder="비밀번호" />
+            <button type="button"> 로그인 </button>
+          </div>
+        </div>
     </div>
+    <script src="./assets/js/loadLeftContainer.js"></script>
+    <script src="./assets/js/loginPopup.js"></script>
+    <script>
+        // 메뉴 이동 스크립트
+        const menus = document.querySelectorAll('.menu');
+        menus.forEach((menu) => menu.addEventListener('click', () => window.location.href="./index.html"));
+    </script>
+    <script>
+      // 상품 상세페이지 이동 스크립트
+      const showItem = (e) => {
+        window.location.href="./product.html";
+      }
+      const items = document.querySelectorAll('.item');
+      items.forEach((item) => item.addEventListener('click', showItem));
+    </script>
 </body>
 </html>

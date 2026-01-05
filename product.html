@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/product-style.css" />
+    <title>Retro Shop</title>
+</head>
+<body>
+    <div id="retro-shop-app">
+        <section id="left-container">
+        </section>
+        <section id="right-container">
+            <nav>
+                <ul>
+                    <a><li class="menu">HOME</li></a>
+                    <a><li class="menu">NEW</li></a>
+                    <a><li class="menu">CLOTH</li></a>
+                    <a><li class="menu">SOCKS</li></a>
+                    <a><li class="menu">SHOES</li></a>
+                </ul>
+            </nav>
+            <main>
+              <div id="product-img">
+                <img src="./assets/img/2.jpg"/>
+              </div>
+              <div id="product-info">
+                <h3>product name</h3>
+                <h4>0원</h4>
+                <div id="product-buy">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <button>Buy</button>
+                  <button>Add Cart</button>
+                </div>
+              </div>
+              <div id="product-detail">
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia nisi eligendi, cum asperiores dolores ipsum ad saepe error quia aspernatur, iure eos eveniet voluptas, optio voluptates illo ducimus in.</span>
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptate placeat libero eligendi mollitia, neque error, quia deserunt quibusdam impedit suscipit quos quasi sint consequatur dolorem repellendus ab unde quae ducimus maxime. Mollitia quia saepe beatae debitis omnis esse provident! Id, doloremque sed. Laborum voluptatem magnam temporibus doloribus perspiciatis.</span>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ratione neque deserunt a accusamus fugit exercitationem ad natus tempora facilis doloribus non odio ipsum, in culpa nobis soluta impedit quae animi quibusdam velit illo quaerat dolores veniam? Tempore, a animi.</span>
+              </div>
+            </main>
+        </section>
+        <div id="login-btn" onclick="toggleLoginPopup()">
+          <span>LOGIN</span>
+        </div>
+        <footer>2026 @beyopsi</footer>
+        <div id="login-popup">
+          <div id="login-container">
+            <input type="text" placeholder="아이디"/>
+            <input type="password" placeholder="비밀번호" />
+            <button type="button"> 로그인 </button>
+          </div>
+        </div>
+    </div>
+      <script src="./assets/js/loadLeftContainer.js"></script>
+      <script src="./assets/js/loginPopup.js"></script>
+      <script>
+        // 메뉴 이동 스크립트
+        const menus = document.querySelectorAll('.menu');
+        menus.forEach((menu) => menu.addEventListener('click', () => window.location.href="./index.html"));
+      </script>
+      <script>
+        // 상품 상세페이지 이동 스크립트
+        const showItem = (e) => {
+          window.location.href="./product.ht-.ml";
+        }
+        const items = document.querySelectorAll('.item');
+        items.forEach((item) => item.addEventListener('click', showItem));
+      </script>
+</body>
+</html>
