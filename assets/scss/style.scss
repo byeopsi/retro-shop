@@ -41,8 +41,7 @@ body {
   overflow-x: hidden;
 
   #left-container {
-    flex-basis: 20%;
-    flex-shrink: 1;
+    flex: 0 0 20%;
     height: 95%;
     display: flex;
     align-items: center;
@@ -50,7 +49,7 @@ body {
     justify-content: center;
     flex-direction: column;
     img {
-      max-width: 100%;
+        max-width: 100%;
     }
     div {
       border: 2px solid map-get($color, brown);
@@ -60,29 +59,25 @@ body {
   }
 
   #right-container {
-    flex-basis: 80%;
-    flex-grow: 1;
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
     height: 95%;
 
     nav {
       height: 5%;
+      padding:2em 0 1.5em 0;
+      background-color: map-get($color, beige);
       ul {
         display: flex;
         flex-direction: row;
         list-style: none;
         justify-content: center;
         align-items: center;
-        gap: 3em;
+        gap: 8em;
         height: 100%;
-        padding: 1em 0;
-        background-color: map-get($color, beige);
         a {
           cursor: pointer;
-          li {
-            padding: 2em 3em 1em 3em;
-          }
           &:nth-child(2) {
             color: map-get($color, red);
             font-weight: 700;
@@ -102,8 +97,6 @@ body {
       padding: 3em;
       justify-content: flex-start;
       .row {
-        width: 100%;
-        max-height: 90%;
         display: flex;
         flex-wrap: wrap;
         .item {
@@ -136,12 +129,21 @@ body {
       }
     }
   }
+  footer {
+    flex-basis: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($color, yellow);
+  }
+}
 
-  #login-btn {
+#login-btn {
     width: 5em;
     height: 5em;
     background-color: map-get($color, yellow);
-    position: absolute;
+    position: fixed;
     right: 30px;
     bottom: 80px;
     border-radius: 50%;
@@ -153,19 +155,9 @@ body {
     cursor: pointer;
   }
 
-  footer {
-    flex-basis: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: map-get($color, yellow);
-  }
-}
-
 #login-popup {
   background-color: rgba(map-get($color, brown), 0.5);
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
@@ -177,7 +169,7 @@ body {
 
   #login-container {
     width: 20%;
-    height: 20%;
+    height: 30%;
     background-color: map-get($color, beige);
     display: flex;
     flex-direction: column;
@@ -201,6 +193,220 @@ body {
       background-color: map-get($color, yellow);
       padding: .5em 0;
       cursor: pointer;
+    }
+  }
+}
+
+/*노트북 & 태블릿 가로 : 1024px-1279px*/
+@media all and (min-width:1024px) and (max-width:1279px){
+  #retro-shop-app {
+    flex-direction: column;
+
+    #left-container {
+      width: 100%;
+      height: 10%;
+      flex-direction: row;
+      img {
+        content: url("../img/main-logo-2.png");
+        width: 20%;
+      }
+      div {
+        display: none;
+      }
+    }
+
+    #right-container {
+      width: 100%;
+      flex: 1 1 0;
+      overflow: auto;
+      nav {
+        ul {
+          gap: 5em;
+        }
+      }
+      main {
+        .row {
+          .item {
+            flex: 0 0 calc(100% / 3);
+            div {
+              justify-content: right;
+              padding-right: 1em;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+/*태블릿 가로 : 769px-1023px*/
+@media all and (min-width:768px) and (max-width:1023px){
+  #retro-shop-app {
+    flex-direction: column;
+
+    #left-container {
+      width: 100%;
+      height: 10%;
+      flex-direction: row;
+      img {
+        content: url("../img/main-logo-2.png");
+        width: 20%;
+      }
+      div {
+        display: none;
+      }
+    }
+
+    #right-container {
+      width: 100%;
+      flex: 1 1 0;
+      overflow: auto;
+      nav {
+        ul {
+          gap: 4em;
+        }
+      }
+      main {
+        .row {
+          .item {
+            flex: 0 0 calc(100% / 2);
+            div {
+              justify-content: right;
+              padding-right: 1.35em;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      flex: 0 0 auto;
+    }
+  }
+  #login-popup {
+    #login-container {
+      width: 30%;
+      height: 30%;
+
+      button {
+        padding: .8em 0;
+      }
+    }
+  }
+}
+
+/*모바일 가로 & 태블릿 세로 : 480px-767px*/
+@media all and (min-width:480px) and (max-width:767px){
+  #retro-shop-app {
+    flex-direction: column;
+
+    #left-container {
+      width: 100%;
+      height: 10%;
+      flex-direction: row;
+      img {
+        content: url("../img/main-logo-2.png");
+        width: 30%;
+      }
+      div {
+        display: none;
+      }
+    }
+
+    #right-container {
+      width: 100%;
+      flex: 1 1 0;
+      overflow: auto;
+      nav {
+        ul {
+          gap: 2em;
+        }
+      }
+      main {
+        .row {
+          .item {
+            flex: 0 0 100%;
+            div {
+              justify-content: right;
+              padding-right: 2em;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      flex: 0 0 auto;
+    }
+  }
+  #login-popup {
+  #login-container {
+      width: 50%;
+      height: 40%;
+
+      button {
+        padding: .8em 0;
+      }
+    }
+  }
+}
+
+/*모바일 : -479px*/
+@media all and (max-width:479px){
+  #retro-shop-app {
+    flex-direction: column;
+
+    #left-container {
+      width: 100%;
+      height: 10%;
+      flex-direction: row;
+      img {
+        content: url("../img/main-logo-2.png");
+        width: 40%;
+      }
+      div {
+        display: none;
+      }
+    }
+
+    #right-container {
+      width: 100%;
+      flex: 1 1 0;
+      overflow: auto;
+      nav {
+        ul {
+          gap: 1em;
+        }
+      }
+      main {
+        .row {
+          .item {
+            flex: 0 0 100%;
+            div {
+              justify-content: right;
+              padding-right: .25em;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      flex: 0 0 auto;
+    }
+  }
+  #login-popup {
+    #login-container {
+      width: 50%;
+      height: 40%;
+
+      button {
+        padding: .8em 0;
+      }
     }
   }
 }

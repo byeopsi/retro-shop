@@ -1,30 +1,36 @@
-#right-container main {
+@charset "UTF-8";
+#retro-shop-app #right-container main {
   display: flex;
   flex-direction: row !important;
   align-items: flex-start !important;
   flex-wrap: wrap;
+  padding: 4em;
 }
-#right-container main #product-img {
-  width: 70%;
+#retro-shop-app #right-container main #product-img {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#right-container main #product-img img {
-  height: 500px;
+#retro-shop-app #right-container main #product-img img {
   max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
-#right-container main #product-info {
+#retro-shop-app #right-container main #product-info {
+  flex: 1 1 0;
   height: 500px;
-  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#right-container main #product-info #product-buy {
+#retro-shop-app #right-container main #product-info #product-buy {
   margin-top: 3em;
   display: flex;
   align-items: center;
 }
-#right-container main #product-detail {
+#retro-shop-app #right-container main #product-detail {
   width: 100%;
   padding: 1em;
   padding-top: 3em;
@@ -32,6 +38,182 @@
   flex-direction: column;
   justify-content: center;
 }
-#right-container main #product-detail span {
+#retro-shop-app #right-container main #product-detail span {
   margin-bottom: 1em;
+}
+
+/*노트북 & 태블릿 가로 : 1024px-1279px*/
+@media all and (min-width: 1024px) and (max-width: 1279px) {
+  #retro-shop-app #right-container main {
+    display: flex;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap;
+    padding: 4em;
+  }
+  #retro-shop-app #right-container main #product-img {
+    flex: 0 0 50%;
+  }
+  #retro-shop-app #right-container main #product-img img {
+    max-width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #retro-shop-app #right-container main #product-info {
+    flex: 1 1 0;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-info #product-buy {
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-detail {
+    width: 100%;
+    padding: 1em;
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #retro-shop-app #right-container main #product-detail span {
+    margin-bottom: 1em;
+  }
+}
+/*태블릿 가로 : 769px-1023px*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  #retro-shop-app #right-container main {
+    display: flex;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+  #retro-shop-app #right-container main #product-img {
+    flex: 0 0 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-img img {
+    max-width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #retro-shop-app #right-container main #product-info {
+    flex: 1 1 0;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-info #product-buy {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-detail {
+    width: 100%;
+    padding: 1em;
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #retro-shop-app #right-container main #product-detail span {
+    margin-bottom: 1em;
+  }
+}
+/*모바일 가로 & 태블릿 세로 : 480px-767px*/
+@media all and (min-width: 480px) and (max-width: 767px) {
+  #retro-shop-app #right-container main {
+    display: flex;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+  #retro-shop-app #right-container main #product-img {
+    flex: 0 0 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-img img {
+    height: 400px;
+    max-width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #retro-shop-app #right-container main #product-info {
+    flex: 1 1 0;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-info #product-buy {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-detail {
+    width: 100%;
+    padding: 1em;
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #retro-shop-app #right-container main #product-detail span {
+    margin-bottom: 1em;
+  }
+}
+/*모바일 : -479px*/
+@media all and (max-width: 479px) {
+  #retro-shop-app #right-container main {
+    display: flex;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+  #retro-shop-app #right-container main #product-img {
+    flex: 0 0 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-img img {
+    max-width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #retro-shop-app #right-container main #product-info {
+    flex: 1 1 0;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-info #product-buy {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+  }
+  #retro-shop-app #right-container main #product-detail {
+    width: 100%;
+    padding: 1em;
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #retro-shop-app #right-container main #product-detail span {
+    margin-bottom: 1em;
+  }
 }/*# sourceMappingURL=product-style.css.map */

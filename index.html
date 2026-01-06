@@ -7,9 +7,19 @@
     <title>Retro Shop</title>
 </head>
 <body>
+    <div id="login-btn" onclick="toggleLoginPopup()">
+      <span>LOGIN</span>
+    </div>
+    <div id="login-popup">
+      <div id="login-container">
+        <input type="text" placeholder="아이디"/>
+        <input type="password" placeholder="비밀번호" />
+        <button type="button"> 로그인 </button>
+      </div>
+    </div>
     <div id="retro-shop-app">
         <section id="left-container">
-            <img src="./assets/img/main-logo.png" />
+            <img src="./assets/img/main-logo.png"></img>
             <div>Please Sign In</div>
         </section>
         <section id="right-container">
@@ -60,8 +70,6 @@
                     <span>🛒</span>
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div class="item">
                   <img src="./assets/img/2.jpg" />
                   <h3>sample name</h3>
@@ -98,8 +106,6 @@
                     <span>🛒</span>
                   </div>
                 </div>
-              </div>
-              <div class="row">
                 <div class="item">
                   <img src="./assets/img/2.jpg" />
                   <h3>sample name</h3>
@@ -139,17 +145,7 @@
               </div>
             </main>
         </section>
-        <div id="login-btn" onclick="toggleLoginPopup()">
-          <span>LOGIN</span>
-        </div>
         <footer>2026 @beyopsi</footer>
-        <div id="login-popup">
-          <div id="login-container">
-            <input type="text" placeholder="아이디"/>
-            <input type="password" placeholder="비밀번호" />
-            <button type="button"> 로그인 </button>
-          </div>
-        </div>
     </div>
     <script src="./assets/js/loadLeftContainer.js"></script>
     <script src="./assets/js/loginPopup.js"></script>

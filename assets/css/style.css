@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Taenada";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2") format("woff2");
@@ -33,8 +34,7 @@ body {
   overflow-x: hidden;
 }
 #retro-shop-app #left-container {
-  flex-basis: 20%;
-  flex-shrink: 1;
+  flex: 0 0 20%;
   height: 95%;
   display: flex;
   align-items: center;
@@ -51,14 +51,15 @@ body {
   border-radius: 3%;
 }
 #retro-shop-app #right-container {
-  flex-basis: 80%;
-  flex-grow: 1;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   height: 95%;
 }
 #retro-shop-app #right-container nav {
   height: 5%;
+  padding: 2em 0 1.5em 0;
+  background-color: #fcf2e5;
 }
 #retro-shop-app #right-container nav ul {
   display: flex;
@@ -66,16 +67,11 @@ body {
   list-style: none;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 8em;
   height: 100%;
-  padding: 1em 0;
-  background-color: #fcf2e5;
 }
 #retro-shop-app #right-container nav ul a {
   cursor: pointer;
-}
-#retro-shop-app #right-container nav ul a li {
-  padding: 2em 3em 1em 3em;
 }
 #retro-shop-app #right-container nav ul a:nth-child(2) {
   color: #B23A48;
@@ -93,8 +89,6 @@ body {
   justify-content: flex-start;
 }
 #retro-shop-app #right-container main .row {
-  width: 100%;
-  max-height: 90%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -125,11 +119,20 @@ body {
   width: 100%;
   justify-content: space-between;
 }
-#retro-shop-app #login-btn {
+#retro-shop-app footer {
+  flex-basis: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F2CB05;
+}
+
+#login-btn {
   width: 5em;
   height: 5em;
   background-color: #F2CB05;
-  position: absolute;
+  position: fixed;
   right: 30px;
   bottom: 80px;
   border-radius: 50%;
@@ -140,18 +143,10 @@ body {
   padding-top: 0.3em;
   cursor: pointer;
 }
-#retro-shop-app footer {
-  flex-basis: 100%;
-  height: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #F2CB05;
-}
 
 #login-popup {
   background-color: rgba(62, 39, 35, 0.5);
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
@@ -163,7 +158,7 @@ body {
 }
 #login-popup #login-container {
   width: 20%;
-  height: 20%;
+  height: 30%;
   background-color: #fcf2e5;
   display: flex;
   flex-direction: column;
@@ -187,4 +182,170 @@ body {
   background-color: #F2CB05;
   padding: 0.5em 0;
   cursor: pointer;
+}
+
+/*노트북 & 태블릿 가로 : 1024px-1279px*/
+@media all and (min-width: 1024px) and (max-width: 1279px) {
+  #retro-shop-app {
+    flex-direction: column;
+  }
+  #retro-shop-app #left-container {
+    width: 100%;
+    height: 10%;
+    flex-direction: row;
+  }
+  #retro-shop-app #left-container img {
+    content: url("../img/main-logo-2.png");
+    width: 20%;
+  }
+  #retro-shop-app #left-container div {
+    display: none;
+  }
+  #retro-shop-app #right-container {
+    width: 100%;
+    flex: 1 1 0;
+    overflow: auto;
+  }
+  #retro-shop-app #right-container nav ul {
+    gap: 5em;
+  }
+  #retro-shop-app #right-container main .row .item {
+    flex: 0 0 33.3333333333%;
+  }
+  #retro-shop-app #right-container main .row .item div {
+    justify-content: right;
+    padding-right: 1em;
+  }
+  #retro-shop-app footer {
+    flex: 0 0 auto;
+  }
+}
+/*태블릿 가로 : 769px-1023px*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  #retro-shop-app {
+    flex-direction: column;
+  }
+  #retro-shop-app #left-container {
+    width: 100%;
+    height: 10%;
+    flex-direction: row;
+  }
+  #retro-shop-app #left-container img {
+    content: url("../img/main-logo-2.png");
+    width: 20%;
+  }
+  #retro-shop-app #left-container div {
+    display: none;
+  }
+  #retro-shop-app #right-container {
+    width: 100%;
+    flex: 1 1 0;
+    overflow: auto;
+  }
+  #retro-shop-app #right-container nav ul {
+    gap: 4em;
+  }
+  #retro-shop-app #right-container main .row .item {
+    flex: 0 0 50%;
+  }
+  #retro-shop-app #right-container main .row .item div {
+    justify-content: right;
+    padding-right: 1.35em;
+  }
+  #retro-shop-app footer {
+    flex: 0 0 auto;
+  }
+  #login-popup #login-container {
+    width: 30%;
+    height: 30%;
+  }
+  #login-popup #login-container button {
+    padding: 0.8em 0;
+  }
+}
+/*모바일 가로 & 태블릿 세로 : 480px-767px*/
+@media all and (min-width: 480px) and (max-width: 767px) {
+  #retro-shop-app {
+    flex-direction: column;
+  }
+  #retro-shop-app #left-container {
+    width: 100%;
+    height: 10%;
+    flex-direction: row;
+  }
+  #retro-shop-app #left-container img {
+    content: url("../img/main-logo-2.png");
+    width: 30%;
+  }
+  #retro-shop-app #left-container div {
+    display: none;
+  }
+  #retro-shop-app #right-container {
+    width: 100%;
+    flex: 1 1 0;
+    overflow: auto;
+  }
+  #retro-shop-app #right-container nav ul {
+    gap: 2em;
+  }
+  #retro-shop-app #right-container main .row .item {
+    flex: 0 0 100%;
+  }
+  #retro-shop-app #right-container main .row .item div {
+    justify-content: right;
+    padding-right: 2em;
+  }
+  #retro-shop-app footer {
+    flex: 0 0 auto;
+  }
+  #login-popup #login-container {
+    width: 50%;
+    height: 40%;
+  }
+  #login-popup #login-container button {
+    padding: 0.8em 0;
+  }
+}
+/*모바일 : -479px*/
+@media all and (max-width: 479px) {
+  #retro-shop-app {
+    flex-direction: column;
+  }
+  #retro-shop-app #left-container {
+    width: 100%;
+    height: 10%;
+    flex-direction: row;
+  }
+  #retro-shop-app #left-container img {
+    content: url("../img/main-logo-2.png");
+    width: 40%;
+  }
+  #retro-shop-app #left-container div {
+    display: none;
+  }
+  #retro-shop-app #right-container {
+    width: 100%;
+    flex: 1 1 0;
+    overflow: auto;
+  }
+  #retro-shop-app #right-container nav ul {
+    gap: 1em;
+  }
+  #retro-shop-app #right-container main .row .item {
+    flex: 0 0 100%;
+  }
+  #retro-shop-app #right-container main .row .item div {
+    justify-content: right;
+    padding-right: 0.25em;
+  }
+  #retro-shop-app footer {
+    flex: 0 0 auto;
+  }
+  #login-popup #login-container {
+    width: 50%;
+    height: 40%;
+  }
+  #login-popup #login-container button {
+    padding: 0.8em 0;
+  }
 }/*# sourceMappingURL=style.css.map */
