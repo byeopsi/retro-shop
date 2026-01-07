@@ -32,6 +32,11 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: map-get($color, brown);
+}
+
 #retro-shop-app {
   width: 100vw;
   height: 100vh;
@@ -52,9 +57,19 @@ body {
         max-width: 100%;
     }
     div {
-      border: 2px solid map-get($color, brown);
-      padding: 5.25em;
-      border-radius: 3%;
+      background-color: map-get($color, yellow);
+      padding: .5em 1em;
+      border-radius: 5%;
+      &:hover {
+        background-color: map-get($color, red);
+        cursor: pointer;
+        transition: .25s ease-out;
+        a {
+          span {
+          color: white;
+          }
+        }
+      }
     }
   }
 
@@ -153,6 +168,12 @@ body {
     align-items: center;
     padding-top: .3em;
     cursor: pointer;
+    &:hover {
+        background-color: map-get($color, red);
+        color: white;
+        cursor: pointer;
+        transition: .25s ease-out;
+      }
   }
 
 #login-popup {

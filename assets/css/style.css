@@ -25,6 +25,11 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #3E2723;
+}
+
 #retro-shop-app {
   width: 100vw;
   height: 100vh;
@@ -46,9 +51,17 @@ body {
   max-width: 100%;
 }
 #retro-shop-app #left-container div {
-  border: 2px solid #3E2723;
-  padding: 5.25em;
-  border-radius: 3%;
+  background-color: #F2CB05;
+  padding: 0.5em 1em;
+  border-radius: 5%;
+}
+#retro-shop-app #left-container div:hover {
+  background-color: #B23A48;
+  cursor: pointer;
+  transition: 0.25s ease-out;
+}
+#retro-shop-app #left-container div:hover a span {
+  color: white;
 }
 #retro-shop-app #right-container {
   flex: 1 1 0;
@@ -142,6 +155,12 @@ body {
   align-items: center;
   padding-top: 0.3em;
   cursor: pointer;
+}
+#login-btn:hover {
+  background-color: #B23A48;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s ease-out;
 }
 
 #login-popup {
