@@ -19,6 +19,7 @@
                     <a><li class="menu">CLOTH</li></a>
                     <a><li class="menu">SOCKS</li></a>
                     <a><li class="menu">SHOES</li></a>
+                    <a><li class="menu cart hidden">🛒</li></a>
                 </ul>
             </nav>
             <main>
@@ -47,8 +48,8 @@
                   <div class="cell img"><img src="./assets/img/2.jpg"></div>
                   <div class="cell name">셔츠</div>
                   <div class="cell price">29,000원</div>
-                  <div class="cell qty">2</div>
-                  <div class="cell total">58,000원</div>
+                  <div class="cell qty">1</div>
+                  <div class="cell total">29,000원</div>
                 </div>
 
                 <div class="cart-footer">
@@ -76,11 +77,7 @@
     </div>
       <script src="./assets/js/loadLeftContainer.js"></script>
       <script src="./assets/js/loginPopup.js"></script>
-      <script>
-        // 메뉴 이동 스크립트
-        const menus = document.querySelectorAll('.menu');
-        menus.forEach((menu) => menu.addEventListener('click', () => window.location.href="./index.html"));
-      </script>
+      <script src="./assets/js/loadMenus.js"></script>
       <script>
         // 상품 상세페이지 이동 스크립트
         const showItem = (e) => {

@@ -86,9 +86,13 @@ a {
 #retro-shop-app #right-container nav ul a {
   cursor: pointer;
 }
-#retro-shop-app #right-container nav ul a:nth-child(2) {
+#retro-shop-app #right-container nav ul a:nth-child(2), #retro-shop-app #right-container nav ul a:nth-child(6) {
   color: #B23A48;
   font-weight: 700;
+}
+#retro-shop-app #right-container nav ul a .hidden {
+  display: none;
+  padding-bottom: 0.35em;
 }
 #retro-shop-app #right-container main {
   height: 95%;
@@ -117,13 +121,16 @@ a {
   background-color: #fcf2e5;
 }
 #retro-shop-app #right-container main .row .item img {
+  cursor: pointer;
   max-width: 100%;
   margin-bottom: 0.5em;
 }
 #retro-shop-app #right-container main .row .item h3 {
+  cursor: pointer;
   width: 100%;
 }
 #retro-shop-app #right-container main .row .item h4 {
+  cursor: pointer;
   width: 100%;
   margin-bottom: 0.5em;
 }
@@ -131,6 +138,9 @@ a {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+#retro-shop-app #right-container main .row .item div span {
+  cursor: pointer;
 }
 #retro-shop-app footer {
   flex-basis: 100%;
@@ -213,7 +223,13 @@ a {
     height: 10%;
     flex-direction: row;
   }
-  #retro-shop-app #left-container img {
+  #retro-shop-app #left-container a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #left-container a img {
     content: url("../img/main-logo-2.png");
     width: 20%;
   }
@@ -227,6 +243,9 @@ a {
   }
   #retro-shop-app #right-container nav ul {
     gap: 5em;
+  }
+  #retro-shop-app #right-container nav ul a .hidden {
+    display: block;
   }
   #retro-shop-app #right-container main .row .item {
     flex: 0 0 33.3333333333%;
@@ -249,7 +268,13 @@ a {
     height: 10%;
     flex-direction: row;
   }
-  #retro-shop-app #left-container img {
+  #retro-shop-app #left-container a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #left-container a img {
     content: url("../img/main-logo-2.png");
     width: 20%;
   }
@@ -263,6 +288,9 @@ a {
   }
   #retro-shop-app #right-container nav ul {
     gap: 4em;
+  }
+  #retro-shop-app #right-container nav ul a .hidden {
+    display: block;
   }
   #retro-shop-app #right-container main .row .item {
     flex: 0 0 50%;
@@ -292,7 +320,13 @@ a {
     height: 10%;
     flex-direction: row;
   }
-  #retro-shop-app #left-container img {
+  #retro-shop-app #left-container a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #left-container a img {
     content: url("../img/main-logo-2.png");
     width: 30%;
   }
@@ -306,6 +340,9 @@ a {
   }
   #retro-shop-app #right-container nav ul {
     gap: 2em;
+  }
+  #retro-shop-app #right-container nav ul a .hidden {
+    display: block;
   }
   #retro-shop-app #right-container main .row .item {
     flex: 0 0 100%;
@@ -335,7 +372,13 @@ a {
     height: 10%;
     flex-direction: row;
   }
-  #retro-shop-app #left-container img {
+  #retro-shop-app #left-container a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #retro-shop-app #left-container a img {
     content: url("../img/main-logo-2.png");
     width: 40%;
   }
@@ -349,6 +392,12 @@ a {
   }
   #retro-shop-app #right-container nav ul {
     gap: 1em;
+  }
+  #retro-shop-app #right-container nav ul a .hidden {
+    display: block;
+  }
+  #retro-shop-app #right-container main {
+    padding: 1.25em;
   }
   #retro-shop-app #right-container main .row .item {
     flex: 0 0 100%;

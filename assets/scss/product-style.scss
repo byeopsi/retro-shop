@@ -1,3 +1,10 @@
+$color: (
+  beige: #fcf2e5,
+  brown: #3E2723,
+  red: #B23A48,
+  yellow: #F2CB05,
+);
+
 #retro-shop-app {
   #right-container {
     main {
@@ -30,6 +37,30 @@
           margin-top: 3em;
           display: flex;
           align-items: center;
+          gap: 1em;
+
+          select {
+            width: 6em;
+            height: 3em;
+            text-align: center;
+            border: none;
+            border-radius: 5%;
+            outline: none;
+          }
+
+          button {
+            width: 6em;
+            height: 3em;
+            border: none;
+            border-radius: 5%;
+            background-color: map-get($color, yellow);
+            transition: 0.25s ease-out;
+            &:hover {
+              cursor: pointer;
+              color: #fff;
+              background-color: map-get($color, red);
+            }
+          }
         }
       }
 
