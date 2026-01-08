@@ -110,7 +110,7 @@ a {
       height: 95%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: left;
       background-color: map-get($color, beige);
       flex-direction: column;
       overflow-y: scroll;

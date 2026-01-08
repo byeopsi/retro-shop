@@ -21,6 +21,38 @@ h3 {
     justify-content: center;
   }
 
+  .cart-rows {
+    display: flex;
+    flex-direction: column;
+
+    .no-items {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding: 5em 0;
+    }
+
+    .cart-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .cell {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      width: calc(100%/6);
+      justify-content: center;
+      &:nth-child(1) {
+        max-width: 50px;
+      }
+      img {
+        width: 100%;
+        max-height: 100%;
+      }
+    }
+    }
+  }
 
   .row {
     display: flex;
@@ -40,7 +72,7 @@ h3 {
     }
   }
 
-  .cart-footer {
+  .cart-footer, .cart-end {
     background-color: bisque;
     display: flex;
     padding: 1.25em 2em 1.25em 1.25em;

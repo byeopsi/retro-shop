@@ -26,38 +26,20 @@
               <h3>장바구니</h3>
               <div class="cart-table">
                 <div class="cart-header row">
-                  <div class="cell chkbox"><input type="checkbox" /></div>
-                  <div class="cell img">이미지</div>
-                  <div class="cell name">상품명</div>
-                  <div class="cell price">가격</div>
-                  <div class="cell qty">수량</div>
-                  <div class="cell total">총합</div>
+                  <div class="cell"><input type="checkbox" /></div>
+                  <div class="cell">이미지</div>
+                  <div class="cell">상품명</div>
+                  <div class="cell">가격</div>
+                  <div class="cell">수량</div>
+                  <div class="cell">총합</div>
                 </div>
-
-                <div class="cart-row row">
-                                    <div class="cell chkbox"><input type="checkbox"/></div>
-                  <div class="cell img"><img src="./assets/img/1.jpg"></div>
-                  <div class="cell name">자켓</div>
-                  <div class="cell price">29,000원</div>
-                  <div class="cell qty">2</div>
-                  <div class="cell total">58,000원</div>
-                </div>
-
-                <div class="cart-row row">
-                  <div class="cell chkbox"><input type="checkbox"/></div>
-                  <div class="cell img"><img src="./assets/img/2.jpg"></div>
-                  <div class="cell name">셔츠</div>
-                  <div class="cell price">29,000원</div>
-                  <div class="cell qty">1</div>
-                  <div class="cell total">29,000원</div>
-                </div>
-
-                <div class="cart-footer">
-                  <div class="cell">87,000원</div>
+                <div class="cart-rows row">
                 </div>
                 <div class="cart-footer">
-                  <div class="cell"><button>전체삭제</button></div>
-                  <div class="cell"><button>선택삭제</button></div>
+                </div>
+                <div class="cart-end">
+                  <div class="cell"><button onclick="deleteAllItem()">전체삭제</button></div>
+                  <div class="cell"><button onclick="deleteItem()">선택삭제</button></div>
                   <div class="cell"><button>구매</button></div>
                 </div>
               </div>
@@ -78,13 +60,6 @@
       <script src="./assets/js/loadLeftContainer.js"></script>
       <script src="./assets/js/loginPopup.js"></script>
       <script src="./assets/js/loadMenus.js"></script>
-      <script>
-        // 상품 상세페이지 이동 스크립트
-        const showItem = (e) => {
-          window.location.href="./product.ht-.ml";
-        }
-        const items = document.querySelectorAll('.item');
-        items.forEach((item) => item.addEventListener('click', showItem));
-      </script>
+      <script src="./assets/js/loadCart.js"></script>
 </body>
 </html>
