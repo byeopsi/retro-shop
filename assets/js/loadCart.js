@@ -1,6 +1,6 @@
 let cartData = JSON.parse(localStorage.getItem("cart")) || [];
 
-const renderCart = () => {
+const renderCart = (e) => {
   const rows = document.querySelector('.cart-rows');
   const footer = document.querySelector('.cart-footer');
 
