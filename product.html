@@ -24,21 +24,21 @@
             </nav>
             <main>
               <div id="product-img">
-                <img src="./assets/img/2.jpg"/>
+                <img data-bind="src" />
               </div>
               <div id="product-info">
-                <h3>product name</h3>
-                <h4>0원</h4>
+                <h3 data-bind="name"></h3>
+                <h4 data-bind="price"></h4>
                 <div id="product-buy">
-                  <select>
+                  <select id="product-quantity">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                   </select>
-                  <button>Add Cart</button>
-                  <button>Buy Now</button>
+                  <button id="add-cart">Add Cart</button>
+                  <button id="buy-now">Buy Now</button>
                 </div>
               </div>
               <div id="product-detail">
@@ -63,13 +63,40 @@
       <script src="./assets/js/loadLeftContainer.js"></script>
       <script src="./assets/js/loginPopup.js"></script>
       <script src="./assets/js/loadMenus.js"></script>
-      <script>
-        // 상품 상세페이지 이동 스크립트
-        const showItem = (e) => {
-          window.location.href="./product.ht-.ml";
-        }
-        const items = document.querySelectorAll('.item');
-        items.forEach((item) => item.addEventListener('click', showItem));
-      </script>
 </body>
 </html>
+<script>
+  const selectedProduct = sessionStorage.getItem('selectedProduct');
+  const itemData = JSON.parse(selectedProduct);
+
+  document.querySelectorAll("[data-bind]").forEach(
+    (el) => {
+      const key = el.dataset.bind;
+      if(key === "src"){
+        el.src = itemData[key];
+      } else if(key === "name"){
+        el.textContent = itemData[key];
+      } else if(key === "price") {
+        el.textContent = itemData[key] + "원";
+      }
+    }
+  )
+
+  document.addEventListener('click', (e) => {
+    if(e.target.id === 'add-cart'){
+      let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+      const quantity = Number(document.querySelector('#product-quantity').value);
+
+      const existingItem = cartData.find(
+        (item) => item.id === itemData.id
+      )
+
+      if(existingItem) existingItem.quantity += quantity;
+      else cartData.push(itemData);
+
+      localStorage.setItem("cart", JSON.stringify(cartData));
+      alert("상품이 장바구니에 추가되었습니다.");
+    }
+    });
+
+</script>
